@@ -1,4 +1,3 @@
-import Desktop from '@/components/desktop'
 import './globals.css'
 
 export const metadata = {
@@ -12,10 +11,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>
-        <Desktop>{children}</Desktop>
-      </body>
+    <html lang="en" className="theme-light">
+      <body className={'bg-primary-100'}>{children}</body>
     </html>
   )
 }

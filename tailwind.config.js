@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const { createThemes } = require('tw-colors')
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -14,6 +16,22 @@ module.exports = {
       },
     },
   },
-  plugins: [],
-  darkMode: 'class',
+  plugins: [
+    createThemes({
+      light: {
+        primary: 'steelblue',
+        secondary: 'darkblue',
+        brand: '#F3F3F3',
+        text: 'black',
+      },
+      dark: {
+        primary: 'turquoise',
+        secondary: 'tomato',
+        brand: '#4A4A4A',
+        text: 'white',
+      },
+      forest: { primary: '#2A9D8F', secondary: '#E9C46A', brand: '#264653' },
+    }),
+  ],
+  darkMode: ['class', '.theme-dark'],
 }
